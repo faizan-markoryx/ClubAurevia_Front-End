@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "PresqueElegante";
+  src: url("/PresqueElegante.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface font-body antialiased text-primary;
+  }
+}
+
+
+/* Chrome, Safari, Edge */
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.no-spinner {
+  -moz-appearance: textfield;
+}
+
+
+.react-datepicker-wrapper{
+  width: 100% !important;
+}
