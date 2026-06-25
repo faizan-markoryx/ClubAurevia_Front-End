@@ -10,8 +10,8 @@ export const SiteFooter: React.FC = () => {
           <div className="space-y-4">
             <p className="text-3xl font-display tracking-tight">CLUB AUREVIA</p>
             <p className="max-w-sm text-[14px] sm:text-[16px] text-secondary/70 font-thin">
-              Find out everything from parking to pet policy, so you can book with total peace of
-              mind.
+              Connect with the Club Aurevia team for personalized travel assistance, membership inquiries, or booking support.
+              We're here to ensure every journey is seamless, comfortable, and truly exceptional.
             </p>
 
             {/* <div className="space-y-2">
@@ -99,19 +99,20 @@ export const SiteFooter: React.FC = () => {
           <div className="space-y-3">
             <p className="font-normal text-secondary/90 text-[18px]">Contact</p>
             <div className="space-y-3 text-sm text-secondary/70">
-              <p className="font-thin hover:text-secondary text-[14px] sm:text-[16px]">
-                Find out everything from parking to pet policy, so you can book with total peace of
-                mind.
-              </p>
               <div className="space-y-2">
                 <p className="font-thin hover:text-secondary text-[14px] sm:text-[16px]">
-                  <a className="hover:text-secondary" href="mailto:info@lorem.com">
-                    info@lorem.com
+                  <a className="hover:text-secondary">
+                   Office: B-1107, Titanium business park, B/h Divya bhaskar press, near makarba railway crossing, makarba, Ahmedabad - 380051
                   </a>
                 </p>
                 <p className="font-thin hover:text-secondary text-[14px] sm:text-[16px]">
-                  <a className="hover:text-secondary" href="tel:+919897498972">
-                    +91 98974 98972
+                  <a className="hover:text-secondary">
+                   Email: info@clubaurevia.com
+                  </a>
+                </p>
+                <p className="font-thin hover:text-secondary text-[14px] sm:text-[16px]">
+                  <a className="hover:text-secondary" href="tel:+918141112016">
+                   Phone: +91 81411 12016
                   </a>
                 </p>
               </div>

@@ -3,6 +3,11 @@ import Counter from "./Counter";
 import AnimateSection from "./AnimateSection";
 
 const MilestonesSection = () => {
+    const handleBookNowClick = () => {
+        if (typeof window !== "undefined" && (window as any).fbq) {
+            (window as any).fbq("track", "Lead");
+        }
+    };
     return (
         <section className="bg-primary text-white py-16 md:py-24">
             <div className="w-full px-6 md:px-16 lg:px-24">
@@ -24,7 +29,7 @@ const MilestonesSection = () => {
                                 in depth guidance, we’re committed to.
                             </p>
 
-                            <NavLink to="/contact-us">
+                            <NavLink to="/contact-us" onClick={handleBookNowClick}>
                                 <button className="bg-white text-[#123b33] px-8 py-3 text-sm tracking-wide hover:bg-gray-200 transition duration-300">
                                     Book Now
                                 </button>

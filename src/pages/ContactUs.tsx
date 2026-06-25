@@ -39,7 +39,8 @@ const ContactUs = () => {
                 "service_ulpv69s",
                 "template_dfsf9on",
                 formData,
-                "FXesLceClaKzve7AW"
+                // "FXesLceClaKzve7AW"
+                "6Yzlg3KcWFpVE6adY"
             )
 
             toast.success("Message sent successfully!")
@@ -86,30 +87,30 @@ const ContactUs = () => {
                         {/* LEFT SAME */}
                         <div>
                             <h2 className="text-4xl md:text-5xl font-display text-primary">
-                                Lorem Ipsum is simply <br /> dummy text of the!
+                                Let's Plan Your Next Luxury Escape
                             </h2>
 
                             <p className="mt-6 text-primary max-w-md font-thin">
-                                Connect with us via chat, email, or phone—we’ll respond promptly
-                                with options that fit your needs and budget.
+                                Connect with the Club Aurevia team for personalized travel assistance, membership inquiries, or booking support.
+              We're here to ensure every journey is seamless, comfortable, and truly exceptional.
                             </p>
 
                             <div className="mt-10">
                                 <h4 className="text-lg font-semibold text-primary">Address</h4>
                                 <p className="mt-3 text-primary max-w-sm font-thin">
-                                    Lorem Ipsum is simply dummy text...
+                                    B-1107, Titanium business park, B/h Divya bhaskar press, near makarba railway crossing, makarba, Ahmedabad - 380051
                                 </p>
                             </div>
 
                             <div className="mt-10 grid md:grid-cols-2 gap-10 max-w-md">
                                 <div className="md:border-r-2 md:border-[#E1E1E1]">
                                     <h4 className="text-lg font-semibold text-primary">Phone</h4>
-                                    <p className="mt-3 text-primary font-thin">+91 95841 25842</p>
+                                    <p className="mt-3 text-primary font-thin">+91 81411 12016</p>
                                 </div>
 
                                 <div>
                                     <h4 className="text-lg font-semibold text-primary">Email</h4>
-                                    <p className="mt-3 text-primary font-thin">info@clubaureva.com</p>
+                                    <p className="mt-3 text-primary font-thin">info@clubaurevia.com</p>
                                 </div>
                             </div>
                         </div>

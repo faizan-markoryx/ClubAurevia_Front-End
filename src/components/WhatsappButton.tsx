@@ -1,7 +1,7 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsappButton = () => {
-  const phoneNumber = "91"; // country code ke sath number
+  const phoneNumber = "918141112016"; // country code ke sath number
   const message = "Hello! I would like to know more about your services."; // default message
 
   const handleClick = () => {

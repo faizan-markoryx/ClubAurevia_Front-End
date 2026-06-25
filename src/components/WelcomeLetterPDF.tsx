@@ -343,8 +343,8 @@ const WelcomeLetterPDF = ({ user, membership }: any) => (
             marginBottom: 10
           }}>If you require assistance with bookings or travel planning, please contact us:</Text>
 
-          <Text style={styles.guidelines}>Customer Care: +91 98974 98972</Text>
-          <Text style={styles.guidelines}>Reservations: +91 98974 98972</Text>
+          <Text style={styles.guidelines}>Customer Care: +91 81411 12016</Text>
+          <Text style={styles.guidelines}>Reservations: +91 81411 12016</Text>
           <Text>info@clubaurevia.com</Text>
           <Text style={styles.guidelines}>Website: www.clubaurevia.com</Text>
         </View>

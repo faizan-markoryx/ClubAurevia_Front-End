@@ -6,9 +6,9 @@ import bannerVideo from "../assets/home-page-images/banner-video.mp4"
 import FeatureSection from "../components/FeatureSection";
 import RoomSelector from "../components/RoomSelector";
 
-import ExperienceParadiseImage1 from "../assets/home-page-images/Experience-Paradise-Image-1.png"
-import ExperienceParadiseImage2 from "../assets/home-page-images/Experience-Paradise-Image-2.png"
-import ExperienceParadiseImage3 from "../assets/home-page-images/Experience-Paradise-Image-3.png"
+import ExperienceParadiseImage1 from "../assets/home-page-images/Experience-Paradise-Image-1-New.png"
+import ExperienceParadiseImage2 from "../assets/home-page-images/Experience-Paradise-Image-2-New.png"
+import ExperienceParadiseImage3 from "../assets/home-page-images/Experience-Paradise-Image-3-New.png"
 
 import BrandsLogo1 from "../assets/client-logos/Client-Logo-1.png"
 import BrandsLogo2 from "../assets/client-logos/Client-Logo-2.png"
@@ -92,6 +92,13 @@ export const Home: React.FC = () => {
     TravelPartners4,
   ]
 
+
+  const handleBookNowClick = () => {
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "Lead");
+    }
+  };
+
   return (
     <>
       <section
@@ -127,6 +134,7 @@ export const Home: React.FC = () => {
               <div className="pt-4 sm:pt-0">
                 <NavLink
                   to="/contact-us"
+                  onClick={handleBookNowClick}
                   className="sm:inline-flex items-center justify-center bg-secondary text-primary text-[16px] font-thin px-6 sm:px-8 py-2 sm:py-2.5 transition-colors hover:bg-secondary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
                 >
                   Book Now
@@ -144,7 +152,7 @@ export const Home: React.FC = () => {
               id="aurevia-hero-title"
               className="font-display text-[32px] leading-tight text-primary sm:text-5xl md:text-[48px] text-center"
             >
-              Explore By Categories!
+              The Aurevia Experiences!
             </h1>
 
             <p className="text-sm leading-relaxed text-primary/90 sm:text-sm px-2 sm:px-6 font-normal text-center">

@@ -4,15 +4,34 @@ import AnimateSection from "./AnimateSection";
 // import { FaChevronRight } from "react-icons/fa";
 
 
+// const testimonials = [
+//   { id: 1, title: "A peaceful escape that truly felt like paradise!", desc: "Our trip experience with Club Aurevia was excellent. The hotel bookings were smooth, the properties were premium, and the team guided us perfectly throughout the journey.", name: "Ramesh Sharma" },
+//   { id: 2, title: "An unforgettable experience beyond expectations!", desc: "Everything was very well managed from start to finish. The stay was comfortable, the support team was responsive, and our vacation felt truly relaxing and luxurious.", name: "Priya Verma" },
+//   { id: 3, title: "Luxury and comfort combined perfectly!", desc: "We had an amazing family vacation through Club Aurevia. The hotels were beautiful, check-in was hassle-free, and the travel assistance was very helpful.", name: "Amit Patel" },
+//   { id: 4, title: "Absolutely loved every moment!", desc: "The entire booking process was seamless and professional. The team suggested great destinations and guided us properly at every step of the trip.", name: "Neha Kapoor" },
+//   { id: 5, title: "Highly recommended for everyone!", desc: "One of the best travel experiences we’ve had. The hotel locations were excellent, the service was smooth, and the overall planning was done perfectly.", name: "Rohit Mehta" },
+//   { id: 6, title: "Outstanding customer support!", desc: "Club Aurevia made our honeymoon truly memorable. From luxury stays to personalized support, everything exceeded our expectations.", name: "Sneha Joshi" },
+//   { id: 7, title: "Truly world class services!", desc: "Their hospitality and customer support were impressive. The bookings were confirmed on time, and the hotels provided a very comfortable experience.", name: "Vikram Singh" },
+//   { id: 8, title: "Fantastic travel planning!", desc: "We really enjoyed our vacation experience with Club Aurevia. The team was cooperative, the hotels were premium, and the complete journey was stress-free and enjoyable.", name: "Anjali Desai" },
+// ];
+
+
 const testimonials = [
-  { id: 1, title: "A peaceful escape that truly felt like paradise!", desc: "Discover the impact we've made in the travel industry.", name: "Asif Ansari" },
-  { id: 2, title: "An unforgettable experience beyond expectations!", desc: "World-class services with comfort and luxury.", name: "Faizan Pathan" },
-  { id: 3, title: "Luxury and comfort combined perfectly!", desc: "Travel made seamless with premium support.", name: "Noman Shaikh" },
-  { id: 4, title: "Absolutely loved every moment!", desc: "Professional services and global reach.", name: "Rahul Shah" },
-  { id: 5, title: "Highly recommended for everyone!", desc: "Best booking experience ever.", name: "Priya Patel" },
-  { id: 6, title: "Outstanding customer support!", desc: "Luxury meets reliability.", name: "Amit Joshi" },
-  { id: 7, title: "Truly world class services!", desc: "Memories that last forever.", name: "Sneha Mehta" },
-  { id: 8, title: "Fantastic travel planning!", desc: "Everything handled perfectly.", name: "Vikas Sharma" },
+  { id: 1, title: "A smooth and premium travel experience!", desc: "Our trip experience with Club Aurevia was excellent. The hotel bookings were smooth, the properties were premium, and the team guided us perfectly throughout the journey.", name: "Ramesh Sharma" },
+  
+  { id: 2, title: "A perfectly managed relaxing vacation!", desc: "Everything was very well managed from start to finish. The stay was comfortable, the support team was responsive, and our vacation felt truly relaxing and luxurious.", name: "Priya Verma" },
+  
+  { id: 3, title: "A perfect family vacation experience!", desc: "We had an amazing family vacation through Club Aurevia. The hotels were beautiful, check-in was hassle-free, and the travel assistance was very helpful.", name: "Amit Patel" },
+  
+  { id: 4, title: "Seamless booking and expert guidance!", desc: "The entire booking process was seamless and professional. The team suggested great destinations and guided us properly at every step of the trip.", name: "Neha Kapoor" },
+  
+  { id: 5, title: "One of the best travel experiences!", desc: "One of the best travel experiences we’ve had. The hotel locations were excellent, the service was smooth, and the overall planning was done perfectly.", name: "Rohit Mehta" },
+  
+  { id: 6, title: "A truly memorable honeymoon experience!", desc: "Club Aurevia made our honeymoon truly memorable. From luxury stays to personalized support, everything exceeded our expectations.", name: "Sneha Joshi" },
+  
+  { id: 7, title: "Impressive service and hospitality!", desc: "Their hospitality and customer support were impressive. The bookings were confirmed on time, and the hotels provided a very comfortable experience.", name: "Vikram Singh" },
+  
+  { id: 8, title: "A stress-free and enjoyable vacation!", desc: "We really enjoyed our vacation experience with Club Aurevia. The team was cooperative, the hotels were premium, and the complete journey was stress-free and enjoyable.", name: "Anjali Desai" },
 ];
 
 export default function TestimonialSlider() {
