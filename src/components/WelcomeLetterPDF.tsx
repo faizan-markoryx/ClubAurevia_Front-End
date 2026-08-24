@@ -11,14 +11,42 @@ import {
 /* FONT REGISTER */
 /* ------------------ */
 
+// Font.register({
+//   family: "Poppins",
+//   fonts: [
+//     {
+//       src: import.meta.env.VITE_ENVIRONMENT == "Production" ? "/Poppins-Regular.ttf" : "../../public/Poppins-Regular.ttf"
+//     },
+//     {
+//       src: import.meta.env.VITE_ENVIRONMENT == "Production" ? "/Poppins-Bold.ttf" : "../../public/Poppins-Bold.ttf",
+//       fontWeight: "bold"
+//     }
+//   ]
+// });
+
+// Font.register({
+//   family: "PresqueElegante",
+//   src: import.meta.env.VITE_ENVIRONMENT == "Production" ? "/PresqueElegante.otf" : "../../public/PresqueElegante.otf"
+// });
+
+
+
+
+
+
+
+/* ------------------ */
+/* FONT REGISTER */
+/* ------------------ */
+
 Font.register({
   family: "Poppins",
   fonts: [
     {
-      src: import.meta.env.VITE_ENVIRONMENT == "Production" ? "/Poppins-Regular.ttf" : "../../public/Poppins-Regular.ttf"
+      src: "/Poppins-Regular.ttf"
     },
     {
-      src: import.meta.env.VITE_ENVIRONMENT == "Production" ? "/Poppins-Bold.ttf" : "../../public/Poppins-Bold.ttf",
+      src: "/Poppins-Bold.ttf",
       fontWeight: "bold"
     }
   ]
@@ -26,8 +54,12 @@ Font.register({
 
 Font.register({
   family: "PresqueElegante",
-  src: import.meta.env.VITE_ENVIRONMENT == "Production" ? "/PresqueElegante.otf" : "../../public/PresqueElegante.otf"
+  src: "/PresqueElegante.otf"
 });
+
+
+
+
 
 /* ------------------ */
 /* STYLES */
@@ -153,7 +185,7 @@ const WelcomeLetterPDF = ({ user, membership }: any) => (
           </Text>
 
           <Text style={styles.paragraph}>
-            A warm welcome to Club Aurevia Hospitality Pvt Ltd.
+            A warm welcome to Club Aurevia Pvt Ltd.
           </Text>
 
           <Text style={styles.paragraph}>
@@ -208,7 +240,7 @@ const WelcomeLetterPDF = ({ user, membership }: any) => (
           </View>
 
           <View style={styles.row}>
-            <Text style={styles.label}>Preferred Mailing Address</Text>
+            <Text style={styles.label}>Registered Address</Text>
             <Text style={styles.value}>{user?.address || "--"}</Text>
           </View>
 
@@ -250,7 +282,7 @@ const WelcomeLetterPDF = ({ user, membership }: any) => (
       </View>
       <View style={styles.footer}>
         <Text>info@clubaurevia.com</Text>
-        <Text>+91 85472 85478</Text>
+        <Text>+91 81411 12016</Text>
         <Text>clubaurevia.com</Text>
       </View>
 
@@ -282,10 +314,10 @@ const WelcomeLetterPDF = ({ user, membership }: any) => (
 
           <Text style={styles.title}>MEMBERSHIP DETAILS</Text>
 
-          <View style={styles.row}>
+          {/* <View style={styles.row}>
             <Text>Membership Tenure</Text>
             <Text>{membership?.tenure || "--"}</Text>
-          </View>
+          </View> */}
 
           <View style={styles.row}>
             <Text>Membership Nights Per Year</Text>
@@ -303,10 +335,10 @@ const WelcomeLetterPDF = ({ user, membership }: any) => (
             <Text>{membership?.validity || "--"}</Text>
           </View>
 
-          <View style={styles.row}>
+          {/* <View style={styles.row}>
             <Text>Room Occupancy</Text>
             <Text>{`2 Adults + 2 Children below 12 years OR 3 Adults`}</Text>
-          </View>
+          </View> */}
 
         </View>
 
@@ -314,11 +346,21 @@ const WelcomeLetterPDF = ({ user, membership }: any) => (
         {/* BOOKING */}
         <View style={styles.section}>
 
-          <Text style={styles.title}>BOOKING GUIDELINES</Text>
           <Text style={{
-            marginBottom: 10
-          }}>To ensure a smooth travel experience:</Text>
+            marginBottom: 40,
+          }}></Text>
+          <Text style={styles.title}>TERM AND CONDITIONS</Text>
+          {/* <Text style={{
+            marginBottom: 10,
+          }}></Text> */}
 
+          <Text style={styles.guidelines}>• Booking cancellations must be made 72 hours before check-in</Text>
+          <Text style={styles.guidelines}>• Cancellation policies may vary depending on the hotel property</Text>
+          <Text style={styles.guidelines}>• Failure to cancel within the allowed time may result in deduction of nights from your membership</Text>
+          <Text style={styles.guidelines}>• Non Refundable Membership</Text>
+          <Text style={styles.guidelines}>• There must be a minimum gap of 60 days between two consecutive holidays</Text>
+          <Text style={styles.guidelines}>• You will be eligible for the service one month after joining</Text>
+          <Text style={styles.guidelines}>• Complimentary nights may be gifted to a third party, The member and the gift recipient cannot utilize gifted nights during the same booking period</Text>
           <Text style={styles.guidelines}>• Members are advised to book holidays 7–10 days in advance</Text>
           <Text style={styles.guidelines}>• During peak season and festivals, bookings should be made at least 45 days prior</Text>
           <Text style={styles.guidelines}>• All bookings are subject to availability of partner properties</Text>
@@ -326,18 +368,24 @@ const WelcomeLetterPDF = ({ user, membership }: any) => (
         </View>
 
         {/* CANCELLATION */}
-        <View style={styles.section}>
+        {/* <View style={styles.section}>
           <Text style={styles.title}>CANCELLATION POLICY</Text>
           <Text style={styles.guidelines}>• Booking cancellations must be made 72 hours before check-in</Text>
           <Text style={styles.guidelines}>• Cancellation policies may vary depending on the hotel property</Text>
-          <Text style={styles.guidelines}>• Failure to cancel within the allowed time may result in deduction of nights from your membershi</Text>
+          <Text style={styles.guidelines}>• Failure to cancel within the allowed time may result in deduction of nights from your membership</Text>
+          <Text style={styles.guidelines}>• There must be a minimum gap of 60 days between two consecutive holidays</Text>
+          <Text style={styles.guidelines}>• You will be eligible for the service one month after joining</Text>
+          <Text style={styles.guidelines}>• Complimentary nights may be gifted to a third party, The member and the gift recipient cannot utilize gifted nights during the same booking period</Text>
           <Text style={styles.guidelines}>• Non Refundable Membership</Text>
-        </View>
+        </View> */}
 
 
         {/* BOOKING */}
         <View style={styles.section}>
 
+          <Text style={{
+            marginBottom:25,
+          }}></Text>
           <Text style={styles.title}>CUSTOMER SUPPORT</Text>
           <Text style={{
             marginBottom: 10
@@ -361,7 +409,7 @@ const WelcomeLetterPDF = ({ user, membership }: any) => (
       </View>
       <View style={styles.footer}>
         <Text>info@clubaurevia.com</Text>
-        <Text>+91 85472 85478</Text>
+        <Text>+91 81411 12016</Text>
         <Text>clubaurevia.com</Text>
       </View>
 

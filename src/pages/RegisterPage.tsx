@@ -14,8 +14,14 @@ const RegisterPage = () => {
     lastName: "",
     email: "",
     phone: "",
+    addressLine1: "",
+    addressLine2: "",
+    city: "",
+    state: "",
+    postalCode: "",
+    country: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -52,19 +58,24 @@ const RegisterPage = () => {
         lastName: formData.lastName,
         email: formData.email,
         phone: formData.phone,
-        password: formData.password
+        addressLine1: formData.addressLine1,
+        addressLine2: formData.addressLine2,
+        city: formData.city,
+        state: formData.state,
+        postalCode: formData.postalCode,
+        country: formData.country,
+        password: formData.password,
       };
 
       const res = await registerUser(payload);
 
       toast.success(res?.message)
-      // alert(res.message);
 
       navigate("/");
 
     } catch (error: any) {
 
-      // alert(error?.response?.data?.message || "Something went wrong");
+      alert(error?.response?.data?.message || "Something went wrong");
 
     } finally {
 
@@ -88,7 +99,7 @@ const RegisterPage = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="w-full max-w-md"
+          className="w-full max-w-xl"
         >
 
           <h2 className="text-2xl font-semibold text-gray-800 mb-8">
@@ -133,41 +144,157 @@ const RegisterPage = () => {
 
           </div>
 
-          {/* EMAIL */}
-          <div className="mb-4">
 
-            <label className="block text-sm text-gray-700 mb-2">
-              Email
-            </label>
 
-            <input
-              name="email"
-              placeholder="Enter your email"
-              value={formData.email}
-              onChange={handleChange}
-              type="email"
-              required
-              className="w-full px-4 py-3 rounded-lg bg-gray-200 focus:ring-2 focus:ring-[#16302C] text-primary"
-            />
+          <div className="flex gap-4">
+
+            <div className="mb-4 w-1/2">
+              <label className="block text-sm text-gray-700 mb-2">
+                Email
+              </label>
+
+              <input
+
+                name="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+                type="email"
+                required
+                className="w-full px-4 py-3 rounded-lg bg-gray-200 focus:ring-2 focus:ring-[#16302C] text-primary"
+              />
+            </div>
+
+            <div className="mb-4 w-1/2">
+
+              <label className="block text-sm text-gray-700 mb-2">
+                Phone
+              </label>
+
+              <input
+                name="phone"
+                placeholder="Enter your phone number"
+                value={formData.phone}
+                onChange={handleChange}
+                type="tel"
+                required
+                className="w-full px-4 py-3 rounded-lg bg-gray-200 focus:ring-2 focus:ring-[#16302C] text-primary"
+              />
+            </div>
 
           </div>
 
-          {/* PHONE */}
-          <div className="mb-4">
 
+          {/* ADDRESS LINE 1 */}
+          <div className="mb-4">
             <label className="block text-sm text-gray-700 mb-2">
-              Phone
+              Address Line 1
             </label>
 
             <input
-              name="phone"
-              placeholder="Enter your phone number"
-              value={formData.phone}
+              name="addressLine1"
+              type="text"
+              placeholder="Enter your address"
+              value={formData.addressLine1}
               onChange={handleChange}
-              type="tel"
               required
-              className="w-full px-4 py-3 rounded-lg bg-gray-200 focus:ring-2 focus:ring-[#16302C] text-primary"
+              className="w-full px-4 py-3 rounded-lg bg-gray-200 focus:ring-2 focus:ring-[#16302C]"
             />
+          </div>
+
+          {/* ADDRESS LINE 2 */}
+          <div className="mb-4">
+            <label className="block text-sm text-gray-700 mb-2">
+              Address Line 2
+              <span className="text-gray-400"> (Optional)</span>
+            </label>
+
+            <input
+              name="addressLine2"
+              type="text"
+              placeholder="Apartment, Suite, Landmark"
+              value={formData.addressLine2}
+              onChange={handleChange}
+              className="w-full px-4 py-3 rounded-lg bg-gray-200 focus:ring-2 focus:ring-[#16302C]"
+            />
+          </div>
+
+          {/* CITY & STATE */}
+          <div className="flex gap-4">
+
+            <div className="mb-4 w-1/2">
+              <label className="block text-sm text-gray-700 mb-2">
+                City
+              </label>
+
+              <input
+                name="city"
+                type="text"
+                placeholder="City"
+                value={formData.city}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg bg-gray-200 focus:ring-2 focus:ring-[#16302C]"
+              />
+            </div>
+
+            <div className="mb-4 w-1/2">
+              <label className="block text-sm text-gray-700 mb-2">
+                State
+              </label>
+
+              <input
+                name="state"
+                type="text"
+                placeholder="State"
+                value={formData.state}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg bg-gray-200 focus:ring-2 focus:ring-[#16302C]"
+              />
+            </div>
+
+          </div>
+
+          {/* POSTAL CODE & COUNTRY */}
+          <div className="flex gap-4">
+
+            <div className="mb-4 w-1/2">
+              <label className="block text-sm text-gray-700 mb-2">
+                Postal Code
+              </label>
+
+              <input
+                name="postalCode"
+                type="text"
+                placeholder="Postal Code"
+                value={formData.postalCode}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg bg-gray-200 focus:ring-2 focus:ring-[#16302C]"
+              />
+            </div>
+
+            <div className="mb-4 w-1/2">
+              <label className="block text-sm text-gray-700 mb-2">
+                Country
+              </label>
+
+              <select
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg bg-gray-200 focus:ring-2 focus:ring-[#16302C]"
+              >
+                <option value="">Select Country</option>
+                <option value="India">India</option>
+                <option value="United States">United States</option>
+                <option value="Canada">Canada</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Australia">Australia</option>
+              </select>
+            </div>
 
           </div>
 

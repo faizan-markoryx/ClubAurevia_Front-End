@@ -58,6 +58,8 @@ const CustomerDashboard = () => {
     fetchAllTripInquiry();
   }, [isApiRefresh]);
 
+  console.log("currentUserDetails",currentUserDetails)
+
   return (
     <>
 
@@ -77,12 +79,12 @@ const CustomerDashboard = () => {
 
         <StatCard
           title="Total Inquiries"
-          value="524"
+          value="--"
         />
 
         <StatCard
           title="Total Amount Spend"
-          value="₹8,45,000"
+          value="--"
         />
 
         {/* <div className="w-full flex sm:flex-row flex-col justify-between items-center gap-4">

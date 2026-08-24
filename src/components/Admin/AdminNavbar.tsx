@@ -38,6 +38,10 @@ const AdminNavbar = () => {
               Trip Inquiry
             </NavLink>
 
+            <NavLink to="/admin/membership-plans" className={linkClass}>
+              Membership Plans
+            </NavLink>
+
             <NavLink to="/admin/users" className={linkClass}>
               Users
             </NavLink>
@@ -104,6 +108,11 @@ const AdminNavbar = () => {
 
           <NavLink to="/admin/trip-inquiry" className={mobileLinkClass} onClick={() => setOpen(false)}>
             Trip Inquiry
+            <span>›</span>
+          </NavLink>
+
+          <NavLink to="/admin/membership-plans" className={mobileLinkClass} onClick={() => setOpen(false)}>
+            Membership Plans
             <span>›</span>
           </NavLink>
 

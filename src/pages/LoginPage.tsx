@@ -40,6 +40,8 @@ const LoginPage = () => {
 
       const res = await loginUser(body);
 
+      console.log("login res>>>>>", res)
+
       if (res.success) {
 
         const userData: any = {
@@ -49,6 +51,7 @@ const LoginPage = () => {
           memberId: res?.user?.memberId,
           email: res?.user?.email,
           phone: res?.user?.phone,
+          address: `${res?.user?.city}, ${res?.user?.state} - ${res?.user?.postalCode}, ${res?.user?.country}`,
           welcomeLetter: res?.user?.welcomeLetter,
           activeMembership: res?.user?.activeMembership,
         }

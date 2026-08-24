@@ -32,6 +32,7 @@ export const SiteHeader: React.FC = () => {
       { to: "/", label: "Home" },
       { to: "/about-us", label: "About us" },
       { to: "/services", label: "Services" },
+      { to: "/booking-process", label: "Booking Process" },
       { to: "/destination", label: "Destination" },
       { to: "/membership", label: "Membership" },
       { to: "/pay-now", label: "Pay Now" },

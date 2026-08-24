@@ -29,9 +29,12 @@ import Users from "./pages/admin-pages/Users"
 import ManageMembership from "./pages/admin-pages/ManageMembership"
 import AllPayments from "./pages/admin-pages/AllPayments"
 import TripInquiry from "./pages/admin-pages/TripInquiry"
+import CustomMembership from "./pages/admin-pages/CustomMembership"
 import CustomerDashboard from "./pages/CustomerDashboard"
 import { CustomerLayout } from "./layouts/CustomerLayout"
 import { Toaster } from "react-hot-toast"
+import BookingJourney from "./components/BookingJourney"
+import PaymentStatus from "./components/PaymentStatus"
 
 type ProtectedRouteProps = {
   children: React.ReactElement
@@ -64,8 +67,10 @@ function App() {
         </Route>
 
         <Route element={<PublicLayout />}>
+          <Route path="/payment-status" element={<PaymentStatus />} />
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/booking-process" element={<BookingJourney />} />
           <Route path="/services" element={<Services />} />
           <Route path="/destination" element={<Destination />} />
           <Route path="/membership" element={<Membership />} />
@@ -116,6 +121,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <TripInquiry />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/membership-plans"
+            element={
+              <ProtectedRoute>
+                <CustomMembership />
               </ProtectedRoute>
             }
           />

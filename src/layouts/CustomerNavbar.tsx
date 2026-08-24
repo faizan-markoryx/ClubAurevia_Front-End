@@ -1,15 +1,15 @@
-import { NavLink, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+// import { useState } from "react";
+// import { FiX } from "react-icons/fi";
 
 const CustomerNavbar = () => {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
   const navigate = useNavigate()
 
-  const mobileLinkClass = ({ isActive }: any) =>
-    `flex justify-between items-center px-4 py-3 border-b text-primary ${isActive ? "font-semibold" : ""
-    }`;
+  // const mobileLinkClass = ({ isActive }: any) =>
+  //   `flex justify-between items-center px-4 py-3 border-b text-primary ${isActive ? "font-semibold" : ""
+  //   }`;
 
   return (
     <>
@@ -20,7 +20,7 @@ const CustomerNavbar = () => {
             </span>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex gap-2 flex-wrap">
+          <div className="flex gap-2 flex-wrap">
             <div className={`cursor-pointer px-4 py-2 flex justify-center items-center rounded-lg text-sm font-medium transition text-primary border border-primary hover:bg-red-700 hover:text-white hover:border-transparent`} onClick={()=>navigate("/login")}>
                Logout
             </div>
@@ -28,31 +28,31 @@ const CustomerNavbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
+          {/* <button
             className="md:hidden text-primary text-2xl"
             onClick={() => setOpen(true)}
           >
-            <FiMenu />
-          </button>
+            <FiMenu />--
+          </button> */}
+          
 
         </div>
       </nav>
 
       {/* Overlay */}
-      {open && (
+      {/* {open && (
         <div
           className="fixed inset-0 bg-black/30 z-40 md:hidden"
           onClick={() => setOpen(false)}
         />
-      )}
+      )} */}
 
       {/* Right Sidebar */}
-      <div
+      {/* <div
         className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 md:hidden ${open ? "translate-x-0" : "translate-x-full"
           }`}
       >
 
-        {/* Sidebar Header */}
         <div className="flex justify-between items-center px-4 py-4 border-b">
 
           <span className="font-semibold text-primary">
@@ -68,7 +68,6 @@ const CustomerNavbar = () => {
 
         </div>
 
-        {/* Mobile Links */}
         <div className="flex flex-col">
 
           <NavLink to="/admin/dashboard" className={mobileLinkClass} onClick={() => setOpen(false)}>
@@ -93,7 +92,7 @@ const CustomerNavbar = () => {
 
         </div>
 
-      </div>
+      </div> */}
     </>
   );
 };

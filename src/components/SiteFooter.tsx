@@ -65,6 +65,9 @@ export const SiteFooter: React.FC = () => {
               <NavLink to="/about-us" className="font-thin hover:text-secondary text-[14px] sm:text-[16px]">
                 About us
               </NavLink>
+              <NavLink to="/booking-process" className="font-thin hover:text-secondary text-[14px] sm:text-[16px]">
+                Booking Process
+              </NavLink>
               <NavLink to="/services" className="font-thin hover:text-secondary text-[14px] sm:text-[16px]">
                 Services
               </NavLink>
@@ -123,7 +126,7 @@ export const SiteFooter: React.FC = () => {
 
       <div className="mt-10 border-t border-white/10 pt-5">
         <div className="flex flex-col gap-3 text-xs text-secondary/60 sm:flex-row sm:items-center sm:justify-center">
-          <p className="text-[14px] sm:text-[16px] font-thin">2016 © All right reserved</p>
+          <p className="text-[14px] sm:text-[16px] font-thin">2016 - 2026 © All right reserved</p>
           {/* <p className="text-[14px] sm:text-[16px] font-thin">Made by Clickrit</p> */}
         </div>
       </div>

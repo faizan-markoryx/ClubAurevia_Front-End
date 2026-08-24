@@ -11,6 +11,30 @@ export const getMembershipPlans = async () => {
 };
 
 
+export const createMembershipPlan = async (data) => {
+  const res = await axios.post(`/membership/plans`, data);
+  return res.data;
+};
+
+
+export const getMembershipPlanById = async (planId) => {
+  const res = await axios.get(`/membership/plans/${planId}`);
+  return res.data;
+};
+
+
+export const updateMembershipPlan = async (planId, data) => {
+  const res = await axios.put(`/membership/plans/${planId}`, data);
+  return res.data;
+};
+
+
+export const deleteMembershipPlan = async (planId) => {
+  const res = await axios.delete(`/membership/plans/${planId}`);
+  return res.data;
+};
+
+
 export const assignMembership = async (data) => {
   const res = await axios.post(`/membership/assign`, data);
   return res.data;
