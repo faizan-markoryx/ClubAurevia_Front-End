@@ -114,8 +114,8 @@ export const SiteFooter: React.FC = () => {
                   </a>
                 </p>
                 <p className="font-thin hover:text-secondary text-[14px] sm:text-[16px]">
-                  <a className="hover:text-secondary" href="tel:+918141112016">
-                   Phone: +91 81411 12016
+                  <a className="hover:text-secondary" href="tel:+918141112028">
+                   Phone: +91 81411 12028
                   </a>
                 </p>
               </div>

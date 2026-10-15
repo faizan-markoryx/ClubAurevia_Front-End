@@ -132,7 +132,7 @@ const PaymentStatus = () => {
   // Reference for screenshot capture
   const printRef = useRef<HTMLDivElement>(null);
   
-  const adminWhatsAppNumber = "918141112016";
+  const adminWhatsAppNumber = "918141112028";
 
   useEffect(() => {
     if (!orderId) {
@@ -142,7 +142,7 @@ const PaymentStatus = () => {
 
     const verifyPaymentRecord = async () => {
       try {
-        const response = await axios.post("http://localhost:5000/api/payments/verify-payment", {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/payments/verify-payment`, {
           orderId: orderId,
         });
 

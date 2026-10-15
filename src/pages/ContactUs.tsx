@@ -105,7 +105,7 @@ const ContactUs = () => {
                             <div className="mt-10 grid md:grid-cols-2 gap-10 max-w-md">
                                 <div className="md:border-r-2 md:border-[#E1E1E1]">
                                     <h4 className="text-lg font-semibold text-primary">Phone</h4>
-                                    <p className="mt-3 text-primary font-thin">+91 81411 12016</p>
+                                    <p className="mt-3 text-primary font-thin">+91 81411 12028</p>
                                 </div>
 
                                 <div>

@@ -328,8 +328,7 @@ const PayNow = () => {
       setLoading(true);
 
       // 1️⃣ Backend ko data bhej kar Order Create karein (Cashfree payment_session_id laayein)
-      // NOTE: "http://localhost:5000/api/payments/create-order" ko apne actual backend URL se replace karein
-      const response = await axios.post("http://localhost:5000/api/payments/create-order", formData);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/payments/create-order`, formData);
 
       if (response.data.success && response.data.payment_session_id) {
         
