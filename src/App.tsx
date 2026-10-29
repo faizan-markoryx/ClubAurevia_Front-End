@@ -35,6 +35,11 @@ import { CustomerLayout } from "./layouts/CustomerLayout"
 import { Toaster } from "react-hot-toast"
 import BookingJourney from "./components/BookingJourney"
 import PaymentStatus from "./components/PaymentStatus"
+import PrivacyPolicy from "./pages/PrivacyPolicy"
+import TermsAndConditions from "./pages/TermsAndConditions"
+import RefundPolicy from "./pages/RefundPolicy"
+import ShippingPolicy from "./pages/ShippingPolicy"
+import CancellationPolicy from "./pages/CancellationPolicy"
 
 type ProtectedRouteProps = {
   children: React.ReactElement
@@ -75,6 +80,12 @@ function App() {
           <Route path="/destination" element={<Destination />} />
           <Route path="/membership" element={<Membership />} />
           <Route path="/contact-us" element={<ContactUs />} />
+
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/shipping-and-delivery-policy" element={<ShippingPolicy />} />
+          <Route path="/cancellation-policy" element={<CancellationPolicy />} />
         </Route>
 
 

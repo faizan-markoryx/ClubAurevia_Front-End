@@ -70,7 +70,8 @@ const CustomerDashboard = () => {
 
         {
           currentUserDetails?.welcomeLetter ? <>
-            <WelcomeLetterActions user={parseUserData} membership={currentMembership} />
+            {/* <WelcomeLetterActions user={parseUserData} membership={currentMembership} /> */}
+            <WelcomeLetterActions user={currentUserDetails} membership={currentMembership} />
           </> : <></>
         }
       </div>
