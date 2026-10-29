@@ -31,10 +31,6 @@ import {
 
 
 
-
-
-
-
 /* ------------------ */
 /* FONT REGISTER */
 /* ------------------ */
@@ -367,19 +363,6 @@ const WelcomeLetterPDF = ({ user, membership }: any) => (
           <Text style={styles.guidelines}>• If a selected property is unavailable, a similar category property may be offered</Text>
         </View>
 
-        {/* CANCELLATION */}
-        {/* <View style={styles.section}>
-          <Text style={styles.title}>CANCELLATION POLICY</Text>
-          <Text style={styles.guidelines}>• Booking cancellations must be made 72 hours before check-in</Text>
-          <Text style={styles.guidelines}>• Cancellation policies may vary depending on the hotel property</Text>
-          <Text style={styles.guidelines}>• Failure to cancel within the allowed time may result in deduction of nights from your membership</Text>
-          <Text style={styles.guidelines}>• There must be a minimum gap of 60 days between two consecutive holidays</Text>
-          <Text style={styles.guidelines}>• You will be eligible for the service one month after joining</Text>
-          <Text style={styles.guidelines}>• Complimentary nights may be gifted to a third party, The member and the gift recipient cannot utilize gifted nights during the same booking period</Text>
-          <Text style={styles.guidelines}>• Non Refundable Membership</Text>
-        </View> */}
-
-
         {/* BOOKING */}
         <View style={styles.section}>
 
@@ -420,3 +403,400 @@ const WelcomeLetterPDF = ({ user, membership }: any) => (
 );
 
 export default WelcomeLetterPDF;
+
+
+
+
+
+
+
+
+
+
+// import {
+//   Page,
+//   Text,
+//   View,
+//   Document,
+//   StyleSheet,
+//   Font,
+//   Image
+// } from "@react-pdf/renderer";
+
+// /* ------------------ */
+// /* FONT REGISTER */
+// /* ------------------ */
+
+// Font.register({
+//   family: "Poppins",
+//   fonts: [
+//     {
+//       src: "/Poppins-Regular.ttf"
+//     },
+//     {
+//       src: "/Poppins-Bold.ttf",
+//       fontWeight: "bold"
+//     }
+//   ]
+// });
+
+// Font.register({
+//   family: "PresqueElegante",
+//   src: "/PresqueElegante.otf"
+// });
+
+// /* ------------------ */
+// /* STYLES */
+// /* ------------------ */
+
+// const styles = StyleSheet.create({
+//   page: {
+//     padding: 0,
+//     margin: 0,
+//     fontFamily: "Poppins",
+//     fontSize: 10,
+//     color: "#2C3E50",
+//     position: "relative"
+//   },
+
+//   headerImg: {
+//     width: "100%",
+//     height: 150,
+//     objectFit: "fill"
+//   },
+
+//   // PAGE 1 STYLES
+//   page1Container: {
+//     paddingHorizontal: 42,
+//     paddingTop: 0
+//   },
+//   salutation: {
+//     fontSize: 14,
+//     fontWeight: "bold",
+//     color: "#16302C",
+//     marginBottom: 8,
+//     marginTop: 16
+//   },
+//   welcomeLine: {
+//     fontSize: 13,
+//     fontWeight: "bold",
+//     color: "#16302C",
+//     marginBottom: 10
+//   },
+//   paragraph: {
+//     fontSize: 11,
+//     lineHeight: 1.5,
+//     color: "#303234",
+//     marginBottom: 8,
+//     textAlign: "left"
+//   },
+//   bottomEnvelopeImg: {
+//     position: "absolute",
+//     bottom: 0,
+//     left: 0,
+//     right: 0,
+//     width: "100%",
+//     height: 380,
+//     objectFit: "cover"
+//   },
+
+//   // PAGE 2 & 3 CONTAINER
+//   bodyContainer: {
+//     paddingHorizontal: 42,
+//     paddingTop: 0,
+//     paddingBottom: 50
+//   },
+
+//   sectionTitle: {
+//     fontSize: 13,
+//     fontWeight: "bold",
+//     color: "#16302C",
+//     marginBottom: 6,
+//     marginTop: 10,
+//     letterSpacing: 0.5
+//   },
+
+//   // CARD / PILL DESIGN (Exact like 2nd image)
+//   row: {
+//     flexDirection: "row",
+//     justifyContent: "space-between",
+//     alignItems: "center",
+//     backgroundColor: "#EDEDED",     // <-- Light grey background pill
+//     borderRadius: 8,                // <-- Rounded corners
+//     paddingVertical: 10,             // <-- Vertical inner space
+//     paddingHorizontal: 12,          // <-- Left & Right padding
+//     marginBottom: 7                 // <-- Do cards ke beech ka gap
+//   },
+//   rowLabel: {
+//     fontSize: 12,
+//     color: "#000000",
+//     fontWeight: "500",
+//     width: "45%"
+//   },
+//   rowValue: {
+//     fontSize: 12,
+//     color: "#000000",
+//     fontWeight: "normal",           // <-- Bold hata diya (exact reference match)
+//     width: "55%",
+//     textAlign: "right"
+//   },
+
+//   // PAGE 3 TERMS & CONDITIONS
+//   termsListContainer: {
+//     marginTop: 4
+//   },
+//   termItem: {
+//     flexDirection: "row",
+//     marginBottom: 4.5,
+//     paddingRight: 10
+//   },
+//   termBullet: {
+//     width: 10,
+//     fontSize: 11,
+//     color: "#16302C"
+//   },
+//   termText: {
+//     flex: 1,
+//     fontSize: 11,
+//     lineHeight: 1.35,
+//     color: "#2A2A2A"
+//   },
+//   closingContainer: {
+//     marginTop: 16,
+//     alignItems: "center"
+//   },
+//   closingTitle: {
+//     fontSize: 10.5,
+//     fontWeight: "bold",
+//     color: "#16302C",
+//     marginBottom: 3
+//   },
+//   closingSubtitle: {
+//     fontSize: 9,
+//     color: "#4A4A4A"
+//   },
+
+//   // REUSABLE FOOTER
+//   footerWrapper: {
+//     position: "absolute",
+//     bottom: 0,
+//     left: 0,
+//     right: 0
+//   },
+//   goldDivider: {
+//     height: 5.5,
+//     width: "100%",
+//     backgroundColor: "#DBA800"
+//   },
+//   footer: {
+//     backgroundColor: "#16302C",
+//     color: "#FFFFFF",
+//     paddingHorizontal: 42,
+//     paddingVertical: 10,
+//     flexDirection: "row",
+//     justifyContent: "space-between",
+//     alignItems: "center",
+//     fontSize: 9
+//   }
+// });
+
+// /* ------------------ */
+// /* PDF COMPONENT */
+// /* ------------------ */
+
+// const WelcomeLetterPDF = ({ user, membership }: any) => {
+//   // Static data matching the client's PDF
+//   const staticData = {
+//     name: "Paras Sahdev",
+//     memberId: "CA143",
+//     coApplicant: "",
+//     email: "parassahdev.hs35@gmail.com",
+//     phone: "7995500337",
+//     address: "Roorkee",
+//     fees: "45,000/-",
+//     tenure: "3 Years",
+//     nights: "8 Days / 7 Nights",
+//     mealPlan: "Breakfast and Dinner",
+//     validity: "9/6/2025 to 8/6/2028",
+//     roomCapacity: "2 Adult, 2 Kids below 12 years or 3 Adult + 1 Room"
+//   };
+
+//   const termsList = [
+//     "Club Aurevia members can enjoy access to a selection of 4-star and 5-star hotels and resorts.",
+//     "Members have the flexibility to divide their allotted holiday days among multiple destinations.",
+//     "Membership nights may be gifted to family members, friends or relatives.",
+//     "Members are permitted to combine their available holiday nights for an extended stay.",
+//     "Complimentary indoor and outdoor activities or amenities are included as part of the membership.",
+//     "There are no hidden costs or additional annual subscription charges.",
+//     "Hotel reservations and room allocations are subject to availability at the time of booking.",
+//     "Breakfast and dinner arrangements may vary depending on the selected hotel or resort.",
+//     "A minimum interval of 90 days must be maintained between two consecutive holidays.",
+//     "If a property featured in the brochure is unavailable, Club Aurevia will arrange an alternative property of a similar category.",
+//     "Regular membership nights and complimentary nights cannot be combined or used during the same holiday.",
+//     "Members may choose to use their allotted nights personally or transfer them as a gift. Both options cannot be exercised simultaneously.",
+//     "Holiday bookings should be requested at least 7-10 days before the intended travel date.",
+//     "For festivals and peak travel periods, a minimum advance notice of 45 days is required.",
+//     "Cancellation requests must be submitted at least 72 hours before the scheduled check-in.",
+//     "Property-specific cancellation policies may apply, and failure to comply may result in a deduction of membership nights.",
+//     "Membership amount is non-refundable."
+//   ];
+
+//   return (
+//     <Document>
+//       {/* ================= PAGE 1 ================= */}
+//       <Page size="A4" style={styles.page}>
+//         <Image src="/header.png" style={styles.headerImg} />
+
+//         <View style={styles.page1Container}>
+//           <Text style={styles.salutation}>
+//             Dear {user?.firstName ? `${user?.firstName} ${user?.lastName}` : staticData.name},
+//           </Text>
+
+//           <Text style={styles.welcomeLine}>A warm welcome to Club Aurevia Pvt Ltd.</Text>
+
+//           <Text style={styles.paragraph}>
+//             We are delighted to have you as a valued member of the Club Aurevia family, where luxury travel meets curated hospitality experiences. Your membership opens the door to a world of premium stays, handpicked destinations, and exceptional service designed to create unforgettable journeys.
+//           </Text>
+
+//           <Text style={styles.paragraph}>
+//             Through Club Aurevia, you gain access to a curated collection of 4-star and 5-star partner hotels and resorts across India and international destinations. Our goal is to provide seamless holiday planning, comfortable stays, and memorable travel experiences for you and your loved ones.
+//           </Text>
+
+//           <Text style={styles.paragraph}>
+//             We look forward to hosting you and your family on many incredible vacations ahead.
+//           </Text>
+//         </View>
+
+//         <Image src="/firstpage-bottom-section.png" style={styles.bottomEnvelopeImg} />
+//       </Page>
+
+//       {/* ================= PAGE 2 ================= */}
+//       <Page size="A4" style={styles.page}>
+//         <Image src="/header.png" style={styles.headerImg} />
+
+//         <View style={styles.bodyContainer}>
+//           {/* USER DETAILS */}
+//           <Text style={styles.sectionTitle}>YOUR DETAILS AS CONFIRMED</Text>
+
+//           <View style={styles.row}>
+//             <Text style={styles.rowLabel}>Member ID:</Text>
+//             <Text style={styles.rowValue}>{user?.memberId || staticData.memberId}</Text>
+//           </View>
+
+//           <View style={styles.row}>
+//             <Text style={styles.rowLabel}>Membership in the Name of:</Text>
+//             <Text style={styles.rowValue}>
+//               {user?.firstName ? `${user?.firstName} ${user?.lastName}` : staticData.name}
+//             </Text>
+//           </View>
+
+//           <View style={styles.row}>
+//             <Text style={styles.rowLabel}>Name of the Co-applicant:</Text>
+//             <Text style={styles.rowValue}>{user?.coApplicant || staticData.coApplicant || "-"}</Text>
+//           </View>
+
+//           <View style={styles.row}>
+//             <Text style={styles.rowLabel}>Registered Email ID:</Text>
+//             <Text style={styles.rowValue}>{user?.email || staticData.email}</Text>
+//           </View>
+
+//           <View style={styles.row}>
+//             <Text style={styles.rowLabel}>Registered Contact Number:</Text>
+//             <Text style={styles.rowValue}>{user?.phone || staticData.phone}</Text>
+//           </View>
+
+//           <View style={styles.row}>
+//             <Text style={styles.rowLabel}>Registered Address:</Text>
+//             <Text style={styles.rowValue}>{user?.address || staticData.address}</Text>
+//           </View>
+
+//           <View style={styles.row}>
+//             <Text style={styles.rowLabel}>Membership Fees:</Text>
+//             <Text style={styles.rowValue}>
+//               {membership?.pricePaid ? `₹${membership?.pricePaid}/-` : staticData.fees}
+//             </Text>
+//           </View>
+
+//           {/* MEMBERSHIP DETAILS */}
+//           <Text style={[styles.sectionTitle, { marginTop: 12 }]}>MEMBERSHIP DETAILS</Text>
+
+//           <View style={styles.row}>
+//             <Text style={styles.rowLabel}>Membership Tenure</Text>
+//             <Text style={styles.rowValue}>{membership?.tenure || staticData.tenure}</Text>
+//           </View>
+
+//           <View style={styles.row}>
+//             <Text style={styles.rowLabel}>Membership Nights</Text>
+//             <Text style={styles.rowValue}>
+//               {membership?.totalNights
+//                 ? `${membership.totalNights + 1} Days / ${membership.totalNights} Nights`
+//                 : staticData.nights}
+//             </Text>
+//           </View>
+
+//           <View style={styles.row}>
+//             <Text style={styles.rowLabel}>Meal Plan</Text>
+//             <Text style={styles.rowValue}>{staticData.mealPlan}</Text>
+//           </View>
+
+//           <View style={styles.row}>
+//             <Text style={styles.rowLabel}>Membership Validity</Text>
+//             <Text style={styles.rowValue}>{membership?.validity || staticData.validity}</Text>
+//           </View>
+
+//           <View style={styles.row}>
+//             <Text style={styles.rowLabel}>Room Capacity</Text>
+//             <Text style={styles.rowValue}>{staticData.roomCapacity}</Text>
+//           </View>
+//         </View>
+
+//         {/* Footer */}
+//         <View style={styles.footerWrapper}>
+//           <View style={styles.goldDivider} />
+//           <View style={styles.footer}>
+//             <Text>Info@clubaurivea.com</Text>
+//             <Text>+91 81411 12028</Text>
+//             <Text>clubaurivea.com</Text>
+//           </View>
+//         </View>
+//       </Page>
+
+//       {/* ================= PAGE 3 ================= */}
+//       <Page size="A4" style={styles.page}>
+//         <Image src="/header.png" style={styles.headerImg} />
+
+//         <View style={styles.bodyContainer}>
+//           <Text style={styles.sectionTitle}>MEMBERSHIP BENEFITS & TERMS AND CONDITIONS</Text>
+
+//           <View style={styles.termsListContainer}>
+//             {termsList.map((term, index) => (
+//               <View key={index} style={styles.termItem}>
+//                 <Text style={styles.termBullet}>•</Text>
+//                 <Text style={styles.termText}>{term}</Text>
+//               </View>
+//             ))}
+//           </View>
+
+//           <View style={styles.closingContainer}>
+//             <Text style={styles.closingTitle}>Thank You For Choosing Club Aurevia.</Text>
+//             <Text style={styles.closingSubtitle}>
+//               We look forward to being part of your family's holiday memories.
+//             </Text>
+//           </View>
+//         </View>
+
+//         {/* Footer */}
+//         <View style={styles.footerWrapper}>
+//           <View style={styles.goldDivider} />
+//           <View style={styles.footer}>
+//             <Text>Info@clubaurivea.com</Text>
+//             <Text>+91 81411 12028</Text>
+//             <Text>clubaurivea.com</Text>
+//           </View>
+//         </View>
+//       </Page>
+//     </Document>
+//   );
+// };
+
+// export default WelcomeLetterPDF;
